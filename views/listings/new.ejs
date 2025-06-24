@@ -3,7 +3,12 @@
         <div class="col-8 offset-2">
             <!-- <br /><br /> -->
     <h3>Create a New Listing</h3>
-    <form method="POST" action="/listings" novalidate class="needs-validation">
+    <form 
+      method="POST" 
+      action="/listings" 
+      novalidate class="needs-validation" 
+      enctype="multipart/form-data" 
+      >
         <div class="mb=3">
             <lable for="title" class="form-label">Title</lable>
             <input 
@@ -26,12 +31,9 @@
         </div>
 
         <div class="mb=3">
-            <lable for="image" class="form-label">Image Link</lable>
-            <input 
-             name="listing[image][url]" 
-             placeholder="enter URL/Link" 
-             typr="text" 
-             class="form-control">
+            <lable for="image" class="form-label">Upload Listing Image</lable>
+            <input name="listing[image][url]" type="file" class="form-control" />
+            required
         </div>
         
         <div class="row">
@@ -43,7 +45,7 @@
                  class="form-control" required>
                  <div class="invalid-feedback">Price should be valid</div>
             </div>
-    
+
             <div class="mb=3 col-md-8">
                 <lable for="country" class="form-label">Country</lable>
                 <input 
